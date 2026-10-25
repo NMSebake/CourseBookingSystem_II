@@ -1,0 +1,44 @@
+.course-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+}
+
+h3 {
+    margin: 0 0 0.5rem 0;
+}
+
+button {
+    background-color: blue;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    margin-right: 1rem;
+}
+
+button:hover {
+    background-color: blue;
+}
+
+button:disabled {
+    background-color: grey;
+}
+
+img {
+    width: 90px;
+    height: 75px;
+}
+
+.special-offer {
+    color: green;
+    font-weight: bold;
+}
+
+.sale-baneer {
+    color: white0;
+    font-weight: bold;
+    background-color: green;
+}

@@ -6,7 +6,7 @@ import { Course } from '../models/course.model';
   selector: 'app-course-card',
   imports: [NgStyle, DatePipe, CurrencyPipe],
   templateUrl: './course-card.html',
-  styleUrl: './course-card.css'
+  styleUrl: './course-card.css',
 })
 export class CourseCard {
   @Input() course!: Course;

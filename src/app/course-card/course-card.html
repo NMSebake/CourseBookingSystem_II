@@ -9,7 +9,7 @@
   <p>{{ course.price | currency: 'ZAR' : 'R' }}</p>
   <p>{{ course.date | date: 'longDate' }}</p>
   <p [hidden]="!course.soldOut">Sold Out</p>
-  <!-- <p [hidden]="!course.onSale" class="on-sale">On Sale</p> -->
+  <p [hidden]="!course.onSale" class="on-sale">On Sale</p>
 
   @if (course.price < 50) {
     <div class="special-offer">Special Offer</div>

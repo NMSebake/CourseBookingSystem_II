@@ -1,5 +1,5 @@
 import { CurrencyPipe, DatePipe, NgStyle } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { CourseCard } from '../course-card/course-card';
 import { Course } from '../models/course.model';
 import { CourseService } from '../services/course';
@@ -15,12 +15,40 @@ export class CourseList implements OnInit {
   wishlist: Course[] = [];
 
   courses: Course[] = [];
-
-  constructor(private courseService: CourseService) {}
+  errorMessage = '';
+  isLoading = false;
+  constructor(
+    private courseService: CourseService,
+    private cdr: ChangeDetectorRef,
+  ) {}
 
   ngOnInit(): void {
-    this.courses = this.courseService.getCourses();
-    console.log('Courses List initialised');
+    this.loadCourses();
+  }
+
+  loadCourses(): void {
+    this.isLoading = true;
+    this.errorMessage = '';
+
+    this.courseService.getCourses().subscribe({
+      next: (data: Course[]) => {
+        this.courses = data;
+        this.isLoading = false;
+
+        // Explicitly check this component and its child views.
+        this.cdr.detectChanges();
+      },
+
+      error: (error) => {
+        console.error('Error loading courses:', error);
+
+        this.errorMessage = 'Unable to load courses. Please try again later.';
+
+        this.isLoading = false;
+
+        this.cdr.detectChanges();
+      },
+    });
   }
 
   onCourseBooked(course: Course): void {

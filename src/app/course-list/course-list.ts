@@ -42,7 +42,8 @@ export class CourseList implements OnInit {
       error: (error) => {
         console.error('Error loading courses:', error);
 
-        this.errorMessage = 'Unable to load courses. Please try again later.';
+        this.errorMessage =
+          'Unable to load courses. \nPlease try again later or start server in the backend folder using "node server.js".';
 
         this.isLoading = false;
 

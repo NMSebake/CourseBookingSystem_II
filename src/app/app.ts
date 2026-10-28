@@ -5,7 +5,7 @@ import { CourseDetail } from './course-detail/course-detail';
 
 @Component({
   selector: 'app-root',
-  imports: [CourseList, CourseDetail],
+  imports: [CourseList, CourseDetail, RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })

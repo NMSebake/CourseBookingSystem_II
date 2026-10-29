@@ -18,5 +18,6 @@
     <div class="sale-banner">On Sale</div>
   }
   <button class="wishlist" (click)="onAddtoWishList()">Add to Wishlist</button>
+  <button (click)="goToDetails(course.id)">See Details</button>
   <button [disabled]="course.soldOut" (click)="onCourseBooked()">Book Course</button>
 </div>

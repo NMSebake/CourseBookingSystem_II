@@ -14,7 +14,7 @@
       "id": 2,
       "title": "Python for Beginners",
       "description": "Learn Python programming and build simple applications",
-      "price": 699.0,
+      "price": 699,
       "date": "2026-11-15",
       "soldOut": false,
       "onSale": false,
@@ -24,7 +24,7 @@
       "id": 3,
       "title": "Data Science Essentials",
       "description": "Explore data analysis, statistics, and visualisation",
-      "price": 999.0,
+      "price": 999,
       "date": "2026-11-10",
       "soldOut": false,
       "onSale": false,
@@ -41,5 +41,30 @@
       "img": "SQL.png"
     }
   ],
-  "students": []
+  "students": [
+    {
+      "id": 1793464623538,
+      "name": "Nkgopoleng",
+      "email": "sebaketsime@gmail.com",
+      "enrolledCourseID": [
+        "1"
+      ]
+    },
+    {
+      "id": 1793464638698,
+      "name": "Sebake",
+      "email": "tsimesebake@gmail.com",
+      "enrolledCourseID": [
+        "2"
+      ]
+    },
+    {
+      "id": 1793464651917,
+      "name": "Ceejay",
+      "email": "matsimelasebake@gmail.com",
+      "enrolledCourseID": [
+        "3"
+      ]
+    }
+  ]
 }

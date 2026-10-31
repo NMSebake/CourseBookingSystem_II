@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Course } from '../models/course.model';
 import { HttpClient } from '@angular/common/http';
 import { Observable, catchError, throwError } from 'rxjs';
+import { Student } from '../models/student.model';
 
 @Injectable({
   providedIn: 'root',
@@ -39,5 +40,9 @@ export class CourseService {
         return throwError(() => error);
       }),
     );
+  }
+
+  addStudent(student: Student): Observable<Student> {
+    return this.http.post<Student>(`${this.baseUrl}/students`, student);
   }
 }

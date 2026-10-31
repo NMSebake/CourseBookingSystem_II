@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { CourseDetail } from '../course-detail/course-detail';
 import { Course } from '../models/course.model';
 import { CourseService } from '../services/course';
+import { Student } from '../models/student.model';
 
 @Component({
   selector: 'app-sign-up-form',
@@ -13,7 +14,8 @@ import { CourseService } from '../services/course';
 })
 export class SignUpForm implements OnInit {
   signUpForm!: FormGroup;
-
+  submissionSuccess: boolean = false;
+  submissionError: string = '';
   courses: Course[] = [];
 
   constructor(
@@ -50,5 +52,30 @@ export class SignUpForm implements OnInit {
 
   get enrolledCourseId() {
     return this.signUpForm.get('enrolledCourseId');
+  }
+
+  onSubmit(): void {
+    if (this.signUpForm.invalid) {
+      return;
+    }
+
+    const newStudent: Student = {
+      id: 0,
+      name: this.signUpForm.value.name,
+      email: this.signUpForm.value.email,
+      enrolledCourseID: [this.signUpForm.value.enrolledCourseId],
+    };
+
+    this.courseService.addStudent(newStudent).subscribe({
+      next: (student) => {
+        console.log('Student successfully signed up: ', student);
+        this.submissionSuccess = true;
+        this.signUpForm.reset();
+      },
+      error: (err) => {
+        console.error('Error signing up student: ', err);
+        this.submissionError = 'There was an error submitting your sign-up. Please try again.';
+      },
+    });
   }
 }

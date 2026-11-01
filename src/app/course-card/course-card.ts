@@ -6,7 +6,7 @@ import { NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-course-card',
-  imports: [NgStyle, DatePipe, CurrencyPipe, NgOptimizedImage],
+  imports: [DatePipe, CurrencyPipe, NgOptimizedImage],
   templateUrl: './course-card.html',
   styleUrl: './course-card.css',
 })

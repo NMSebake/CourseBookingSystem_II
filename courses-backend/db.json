@@ -75,6 +75,24 @@
       "date": "2026-11-30",
       "img": "javascript.png",
       "onSale": false
+    },
+    {
+      "id": 1793553002621,
+      "title": "Go Programming Fundamentals",
+      "description": "Learn Go programming from the ground up, covering variables, data types, functions, structs, interfaces, pointers, error handling, concurrency, goroutines, and channels. Develop efficient, scalable applications and gain practical experience building backend services and APIs.",
+      "price": "949.99",
+      "date": "2026-12-05",
+      "img": "golang.png",
+      "onSale": false
+    },
+    {
+      "id": 1793558614758,
+      "title": "Kotlin Programming Fundamentals",
+      "description": "Learn Kotlin programming, covering variables, data types, functions, classes, inheritance, interfaces, collections, null safety, exception handling, and coroutines. Build practical applications and explore how Kotlin is used in Android development and modern backend systems.",
+      "price": "849.99",
+      "date": "2026-12-12",
+      "img": "kotlin.png",
+      "onSale": true
     }
   ],
   "students": [
@@ -100,6 +118,14 @@
       "email": "matsimelasebake@gmail.com",
       "enrolledCourseID": [
         "3"
+      ]
+    },
+    {
+      "id": 1793553039086,
+      "name": "Ofentse",
+      "email": "ofentsesebake@gmail.com",
+      "enrolledCourseID": [
+        "1793553002621"
       ]
     }
   ]

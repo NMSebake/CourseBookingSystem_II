@@ -1,9 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { Course } from '../models/course.model';
-import { CourseService } from '../services/course';
-import { Title } from '@angular/platform-browser';
+import { CourseService } from '../../services/course';
+import { Course } from '../../models/course.model';
+// import { Course } from '../../models/course.model';
+// import { CourseService } from '../../services/course';
 
 @Component({
   selector: 'app-add-new-course',

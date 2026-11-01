@@ -4,9 +4,15 @@
   <a routerLink="/courses" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
     >Courses</a
   >
-  <a routerLink="/courses/1" routerLinkActive="active">Course Details</a>
+  <!-- <a routerLink="/courses/1" routerLinkActive="active">Course Details</a> -->
   <a routerLink="/about-us" routerLinkActive="active">About Us</a>
   <a routerLink="/sign-up" routerLinkActive="active">Sign Up</a>
-  <a routerLink="/addNewCourse" routerLinkActive="active">Add New Course</a>
+  <a routerLink="admin/app-add-new-course" routerLinkActive="active">Add New Course</a>
+  <a
+    routerLink="admin/app-student-list"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+    >View Students</a
+  >
 </nav>
 <router-outlet></router-outlet>

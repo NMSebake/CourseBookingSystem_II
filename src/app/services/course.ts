@@ -9,6 +9,7 @@ import { Student } from '../models/student.model';
 })
 export class CourseService {
   courses: Course[] = [];
+  students: Student[] = [];
 
   private baseUrl = 'http://localhost:3000';
   constructor(private http: HttpClient) {}
@@ -41,6 +42,18 @@ export class CourseService {
       }),
     );
   }
+
+  getStudents(): Observable<Student[]> {
+    return this.http.get<Student[]>(`${this.baseUrl}/students`).pipe(
+      catchError((error) => {
+        console.error('Error adding course: ', error);
+        return throwError(() => error);
+      }),
+    );
+  }
+  // getStudents(): Observable<Student[]> {
+  //   return this.http.get<Student[]>(`${this.baseUrl}/students`);
+  // }
 
   addStudent(student: Student): Observable<Student> {
     return this.http.post<Student>(`${this.baseUrl}/students`, student);

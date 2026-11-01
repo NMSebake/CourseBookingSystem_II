@@ -1,0 +1,111 @@
+<!-- <p>add-new-course works!</p> -->
+
+<h2>Add New Course!</h2>
+<form [formGroup]="addNewCourseForm" (ngSubmit)="onSubmitCourse()">
+  <div class="form-group">
+    <label for="title" style="font-weight: bold">Title: </label>
+    <input id="title" type="text" formControlName="title" />
+    @if (title!.invalid && (title!.dirty || title!.touched)) {
+      <div class="error">
+        @if (title!.errors?.['required']) {
+          <small>Title is required</small>
+        }
+        <!-- Seems to be not working -->
+        @if (title!.errors?.['minlength']) {
+          <small>Name must be atleast 3 characters</small>
+        }
+      </div>
+    }
+  </div>
+  <div class="form-group">
+    <label for="description" style="font-weight: bold">Description: </label>
+    <textarea
+      id="description"
+      formControlName="description"
+      rows="4"
+      placeholder="Enter course description"
+    ></textarea>
+    <!-- <input id="description" type="text" formControlName="description" style="height: 50px" /> -->
+    @if (description!.invalid && (description!.dirty || description!.touched)) {
+      <div class="error">
+        @if (description!.errors?.['required']) {
+          <small>Description is required</small>
+        }
+        <!-- Seems to be not working -->
+        @if (description!.errors?.['minlength']) {
+          <small>Name must be atleast 10 characters</small>
+        }
+      </div>
+    }
+  </div>
+  <div class="form-group">
+    <label for="price" style="font-weight: bold">Price(R): </label>
+    <input id="price" type="text" formControlName="price" />
+    @if (price!.invalid && (price!.dirty || price!.touched)) {
+      <div class="error">
+        @if (price!.errors?.['required']) {
+          <small>Price is required</small>
+        }
+        <!-- Seems to be not working -->
+        @if (price!.errors?.['min']) {
+          <small>Invalid price point (R250.00)</small>
+        }
+        @if (price!.errors?.['pattern']) {
+          <small>Invalid price point (R250.00)</small>
+        }
+      </div>
+    }
+  </div>
+  <div class="form-group">
+    <label for="coursedate" style="font-weight: bold">Course Date: </label>
+    <input id="coursedate" type="text" formControlName="coursedate" placeholder=" yyyy-mm-dd" />
+    @if (coursedate!.invalid && (coursedate!.dirty || coursedate!.touched)) {
+      <div class="error">
+        @if (coursedate!.errors?.['required']) {
+          <small>Course date is required</small>
+        }
+        <!-- Seems to be not working -->
+        @if (coursedate!.errors?.['pattern']) {
+          <small>Date needs to be yyyy-mm-dd</small>
+        }
+      </div>
+    }
+  </div>
+  <div class="form-group">
+    <label for="imageUrl" style="font-weight: bold">Image URL: </label>
+    <input id="imageUrl" type="text" formControlName="imageUrl" placeholder="coursename.png" />
+    @if (imageUrl!.invalid && (imageUrl!.dirty || imageUrl!.touched)) {
+      <div class="error">
+        @if (imageUrl!.errors?.['required']) {
+          <small>Image url is required</small>
+        }
+        <!-- Seems to be not working -->
+        @if (imageUrl!.errors?.['pattern']) {
+          <small>Image filename must end in .png, e.g. coursename.png.</small>
+        }
+      </div>
+    }
+  </div>
+  <div class="form-group">
+    <label for="OnSale" style="font-weight: bold">On Sale: </label>
+    <input id="OnSale" type="checkbox" formControlName="OnSale" />
+    @if (OnSale!.invalid && (OnSale!.dirty || OnSale!.touched)) {
+      <div class="error">
+        @if (OnSale!.errors?.['required']) {
+          <small>T</small>
+        }
+      </div>
+    }
+  </div>
+  <button type="submit" [disabled]="addNewCourseForm.invalid">Add Course</button>
+  @if (submissionSuccess) {
+    <div class="success">
+      <p>Successfully added course</p>
+    </div>
+  }
+  @if (submissionError) {
+    <div class="error">
+      <p>{{ submissionError }}</p>
+    </div>
+  }
+</form>

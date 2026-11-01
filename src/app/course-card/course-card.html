@@ -1,9 +1,12 @@
 <div class="course-card">
-  <img
+  <!-- <img
     [src]="course.img"
     [alt]="course.title"
     [ngStyle]="{ border: course.soldOut ? '2px solid red' : 'none' }"
-  />
+  /> -->
+  <div class="image-container">
+    <img [ngSrc]="course.img" [alt]="course.title" fill="" priority="" />
+  </div>
   <h3>{{ course.title }}</h3>
   <p>{{ course.description }}</p>
   <p>{{ course.price | currency: 'ZAR' : 'R' }}</p>

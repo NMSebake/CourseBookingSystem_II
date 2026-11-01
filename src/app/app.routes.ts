@@ -4,6 +4,7 @@ import { CourseDetail } from './course-detail/course-detail';
 import { AboutUs } from './about-us/about-us';
 import { Component } from '@angular/core';
 import { SignUpForm } from './sign-up-form/sign-up-form';
+import { AddNewCourse } from './add-new-course/add-new-course';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'courses', pathMatch: 'full' },
@@ -11,4 +12,5 @@ export const routes: Routes = [
   { path: 'courses/:id', component: CourseDetail },
   { path: 'about-us', component: AboutUs },
   { path: 'sign-up', component: SignUpForm },
+  { path: 'addNewCourse', component: AddNewCourse },
 ];

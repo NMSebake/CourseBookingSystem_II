@@ -39,6 +39,42 @@
       "soldOut": false,
       "onSale": true,
       "img": "SQL.png"
+    },
+    {
+      "id": 1793477103194,
+      "title": "C++ Programming Fundamentals",
+      "description": "Learn the fundamentals of C++ programming, including variables, data types, control structures, functions, object-oriented programming, pointers, and memory management. Build practical programming skills by developing real-world applications.",
+      "price": "799.99",
+      "date": "2026-11-15",
+      "img": "cplusplus.png",
+      "onSale": false
+    },
+    {
+      "id": 1793477178371,
+      "title": "Java Programming Fundamentals",
+      "description": "Learn Java programming from the ground up, covering variables, data types, control structures, methods, object-oriented programming, exception handling, collections, and file handling. Build practical applications and develop the skills needed to create robust software using Java.",
+      "price": "899.99",
+      "date": "2026-11-20",
+      "img": "java.png",
+      "onSale": false
+    },
+    {
+      "id": 1793477219821,
+      "title": "Rust Programming Essentials",
+      "description": "Discover the Rust programming language and learn its core concepts, including variables, data types, ownership, borrowing, lifetimes, structs, enums, pattern matching, and error handling. Develop efficient and reliable applications while understanding Rust's approach to memory safety and performance.",
+      "price": "1099.99",
+      "date": "2026-11-25",
+      "img": "rust.png",
+      "onSale": true
+    },
+    {
+      "id": 1793478051732,
+      "title": "JavaScript Web Development Fundamentals",
+      "description": "Learn JavaScript programming, covering variables, data types, functions, arrays, objects, DOM manipulation, event handling, asynchronous programming, promises, and API integration. Develop interactive web applications and build a strong foundation for modern front-end and back-end development.",
+      "price": "30.00",
+      "date": "2026-11-30",
+      "img": "javascript.png",
+      "onSale": false
     }
   ],
   "students": [

@@ -27,9 +27,21 @@ button:disabled {
     background-color: grey;
 }
 
-img {
+/* img {
     width: 90px;
     height: 75px;
+    position: relative;
+    object-fit: contain;
+} */
+
+.image-container {
+    position: relative;
+    width: 90px;
+    height: 75px;
+}
+
+.image-container img {
+    object-fit: contain;
 }
 
 .special-offer {

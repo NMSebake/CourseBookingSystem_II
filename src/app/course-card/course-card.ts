@@ -2,10 +2,11 @@ import { CurrencyPipe, DatePipe, NgStyle } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Course } from '../models/course.model';
 import { Router, RouterEvent } from '@angular/router';
+import { NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-course-card',
-  imports: [NgStyle, DatePipe, CurrencyPipe],
+  imports: [NgStyle, DatePipe, CurrencyPipe, NgOptimizedImage],
   templateUrl: './course-card.html',
   styleUrl: './course-card.css',
 })
